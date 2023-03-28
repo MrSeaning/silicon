@@ -44,7 +44,7 @@ $this->need('header.php');
                                 <div class="d-flex align-items-center mb-3">
                                     <?php $categories = $this->categories; ?>
                                     <?php foreach ($categories as $cate) { ?>
-                                        <?php echo '<a class="badge fs-sm text-nav bg-secondary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
+                                        <?php echo '<a class="badge fs-sm bg-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
                                     <?php } ?>
                                     <span class="fs-sm text-muted border-start ps-3 ms-3"><?php $this->dateWord(); ?></span>
                                 </div>

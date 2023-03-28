@@ -35,23 +35,14 @@ $this->need('header.php');
             <h1 class="visually-hidden">404</h1>
             <h2 class="display-5">Ooops!</h2>
             <p class="fs-xl pb-3 pb-md-0 mb-md-5">那个有没有可能是你输错地址了🍒</p>
-            <a href="index.html" class="btn btn-lg btn-primary shadow-primary w-sm-auto w-100">
+            <a href="/" class="btn btn-lg btn-primary shadow-primary w-sm-auto w-100">
                 <i class="bx bx-home-alt me-2 ms-n1 lead"></i>
-                Go to homepage
+                回首页
             </a>
         </div>
-        <div class="text-center py-lg-5 py-4 mt-auto">
-            <p class="fs-sm pt-3 pt-lg-0 mb-0">
-                <span class="opacity-75">© All rights reserved. Made by</span>
-                <a class="nav-link d-inline-block p-0" href="/" target="_blank" rel="noopener">Mr.Seaning</a>
-            </p>
-        </div>
+
 
     </section>
 </main>
 <script src="<?php $this->options->themeUrl('assets/js/parallax.min.js') ?>"></script>
-<script src="<?php $this->options->themeUrl('assets/js/smooth-scroll.min.js') ?>"></script>
-<script src="<?php $this->options->themeUrl('assets/js/index.js') ?>"></script>
-</body>
-
-</html>
+<?php $this->need('footer.php'); ?>

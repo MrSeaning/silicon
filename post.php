@@ -74,7 +74,7 @@ $this->content = createCatalog($this->content);
                             <ul class="list-group list-group-flush mx-0">
                                 <li class="list-group-item d-flex align-items-center border-0">
                                     <i class="bx bx-user fs-lg opacity-70 me-2"></i>
-                                    Mr.Seaning
+                                    <?php $this->author() ?>
                                 </li>
                                 <li class="list-group-item d-flex align-items-center border-0">
                                     <i class="bx bx-link fs-lg opacity-70 me-2"></i>

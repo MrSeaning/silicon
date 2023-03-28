@@ -29,16 +29,21 @@ $this->need('header.php');
                     <div class="row g-0">
                         <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<?php echo thumbside($this); ?>); min-height: 15rem;">
                             <a href="<?php $this->permalink() ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                            <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                                <i class="bx bx-bookmark"></i>
-                            </a>
+                            <?php
+                            $commentNum = $this->commentsNum;
+                            if ($commentNum > 1) :
+                            ?>
+                                <a href="<?php $this->permalink() ?>" class="btn btn-icon btn-secondary btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="热评文章">
+                                    <i class="bx bx-star"></i>
+                                </a>
+                            <?php endif ?>
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-3">
                                     <?php $categories = $this->categories; ?>
                                     <?php foreach ($categories as $cate) { ?>
-                                        <?php echo '<a class="badge fs-sm text-nav bg-secondary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
+                                        <?php echo '<a class="badge fs-sm bg-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
                                     <?php } ?>
                                     <span class="fs-sm text-muted border-start ps-3 ms-3"><?php $this->dateWord(); ?></span>
                                 </div>
@@ -49,8 +54,8 @@ $this->need('header.php');
                                 <hr class="my-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                                        <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="48" alt="Avatar">
-                                        Mr.Seaning
+                                        <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="36" alt="Avatar">
+                                        <?php $this->author() ?>
                                     </a>
                                     <div class="d-flex align-items-center text-muted">
                                         <div class="d-flex align-items-center me-3">
