@@ -60,7 +60,7 @@ $this->content = createCatalog($this->content);
                     <div class="alert alert-warning mb-3" role="alert">
                         <h4 class="pt-2 alert-heading"><i class='bx bxs-bell-ring bx-tada me-2'></i>友情提示</h4>
                         <hr class="opacity-25 my-0" style="color: currentColor;">
-                        <p class="pt-3 mb-2">本文最后更新于 <span id="article-expire-day">180</span>天前</p>
+                        <p class="pt-3 mb-2">本文最后更新于 <span id="article-expire-day">一年</span>前</p>
                         <p>文中所描述的信息可能已发生改变,请酌情参考阅读</p>
                     </div>
                 <?php endif ?>

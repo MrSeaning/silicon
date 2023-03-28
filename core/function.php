@@ -81,11 +81,11 @@ function timer_stop($display = 0, $precision = 3)
     return $r;
 }
 
-/* 判断文章写完的日期超过180天给出提示 */
+/* 判断文章写完的日期超过360天给出提示 */
 function timeZoneold($from)
 {
     $now = new Typecho_Date(Typecho_Date::gmtTime());
-    return $now->timeStamp - $from > 15552000 ? true : false;
+    return $now->timeStamp - $from > 15552000 * 2 ? true : false;
 }
 //统计文章字数
 function art_count($cid)
