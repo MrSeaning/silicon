@@ -307,7 +307,7 @@ a#cancel-comment-reply-link {
   transition: all 0.4s ease-in-out;
 }
 .widget .widget-category .list-group-item {
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
 }
 .widget .widget-author-img {
   margin-top: -5rem;
