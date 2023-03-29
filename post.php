@@ -27,7 +27,7 @@ $this->content = createCatalog($this->content);
         <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
             <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
                 <div class="fs-xs border-end pe-3 me-3 mb-2">
-                    <span class="badge bg-primary fs-base">
+                    <span class="badge bg-faded-primary text-primary fs-base">
                         <?php $categories = $this->categories; ?>
                         <?php foreach ($categories as $cate) { ?>
                             <?php echo $cate['name']; ?>

@@ -103,7 +103,7 @@
                         <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode"></label>
                         <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode"></label>
                     </div>
-                    <a href="#searchCollapse" data-bs-toggle="modal" class="btn btn-icon btn-secondary btn-search btn-sm fs-sm rounded order-lg-3 my-3 d-none d-lg-inline-flex">
+                    <a href="#searchCollapse" data-bs-toggle="modal" class="btn btn-icon btn-outline-primary btn-sm fs-sm rounded order-lg-3 my-3 d-none d-lg-inline-flex">
                         <i class="bx bx-search-alt"></i>
                     </a>
                     <nav id="navbarCollapse" class="offcanvas offcanvas-end">

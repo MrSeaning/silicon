@@ -1,13 +1,13 @@
 <h2 class="title my-4">最新</h2>
 <div class="row list">
-    <div class="col-xl-9">
+    <div class="col-xl-9 col-lg-8">
         <?php while ($this->next()) : ?>
             <?php if ($this->category != "say") :
             ?>
                 <?php if ($this->fields->img) : ?>
                     <article class="card border-0 shadow-sm card-hover mb-4">
                         <div class="row g-0">
-                            <div class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<?php echo thumbside($this); ?>); min-height: 15rem;">
+                            <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover rounded-start" style="background-image: url(<?php echo thumbside($this); ?>); min-height: 15rem;">
                                 <a href="<?php $this->permalink() ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                                 <?php
                                 $commentNum = $this->commentsNum;
@@ -18,12 +18,12 @@
                                     </a>
                                 <?php endif ?>
                             </div>
-                            <div class="col-sm-7">
+                            <div class="col-sm-8">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <?php $categories = $this->categories; ?>
                                         <?php foreach ($categories as $cate) { ?>
-                                            <?php echo '<a class="badge fs-sm bg-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
+                                            <?php echo '<a class="badge fs-sm bg-primary shadow-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
                                         <?php } ?>
                                         <span class="fs-sm text-muted border-start ps-3 ms-3"><?php $this->dateWord(); ?></span>
                                     </div>
@@ -34,7 +34,7 @@
                                     <hr class="my-4">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                                            <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="36" alt="Avatar">
+                                            <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="24" alt="Avatar">
                                             <?php $this->author(); ?>
                                         </a>
                                         <div class="d-flex align-items-center text-muted">
@@ -58,7 +58,7 @@
                             <div class="d-flex justify-content-between mb-3">
                                 <?php $categories = $this->categories; ?>
                                 <?php foreach ($categories as $cate) { ?>
-                                    <?php echo '<a class="badge fs-sm bg-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
+                                    <?php echo '<a class="badge fs-sm bg-primary shadow-primary text-decoration-none" href="' . $cate['permalink'] . '">' . $cate['name'] . '</a>'; ?>
                                 <?php } ?>
                                 <?php
                                 $commentNum = $this->commentsNum;
@@ -79,7 +79,7 @@
                                 <div class="fs-sm border-end pe-3 me-3"><?php $this->dateWord(); ?></div>
                                 <div class="d-flex align-items-center me-3">
                                     <i class="bx bx-like fs-lg me-1"></i>
-                                    <span class="fs-sm"></span>
+                                    <span class="fs-sm">0</span>
                                 </div>
                                 <div class="d-flex align-items-center me-3">
                                     <i class="bx bx-comment fs-lg me-1"></i>

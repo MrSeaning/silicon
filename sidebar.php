@@ -1,4 +1,4 @@
-<div class="col-lg-3 position-relative widget">
+<div class="col-xl-3 col-lg-4 position-relative widget">
     <div class="card border-0 text-center widget-author shadow">
         <img src="<?php $this->options->themeUrl('assets/img/aside_author.webp')  ?>" class="card-img-top rounded-top" alt="Card image">
         <div class="card-body">
@@ -28,7 +28,7 @@
                     <li class="list-group-item  ">
                         <a class="d-flex text-body align-items-center text-decoration-none" href="<?php $categories->permalink(); ?>">
                             <?php $categories->name(); ?>
-                            <span class="badge rounded-pill bg-secondary ms-auto"><?php $categories->count(); ?></span>
+                            <span class="badge rounded-pill bg-warning ms-auto"><?php $categories->count(); ?></span>
                         </a>
                     </li>
 

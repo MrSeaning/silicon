@@ -32,7 +32,7 @@
                     </div>
                     <div class="card-footer py-4">
                         <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-                            <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="48" alt="Avatar">
+                            <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="24" alt="Avatar">
                             <?php $this->author(); ?>
                         </a>
                     </div>

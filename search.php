@@ -54,7 +54,7 @@ $this->need('header.php');
                                 <hr class="my-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                                        <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="36" alt="Avatar">
+                                        <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="rounded-circle me-3" width="24" alt="Avatar">
                                         <?php $this->author() ?>
                                     </a>
                                     <div class="d-flex align-items-center text-muted">

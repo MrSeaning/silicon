@@ -19,7 +19,7 @@
         <div class="py-4 " id="<?php $comments->theId(); ?>">
             <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
                 <div class="d-flex align-items-center me-3">
-                    <?php $comments->gravatar('48', ''); ?>
+                    <?php $comments->gravatar('60', ''); ?>
                     <div class="ps-3">
                         <h6 class="fw-semibold mb-0 mt-0"><?php $comments->author(); ?><small data-bs-toggle="tooltip" data-bs-placement="top" title="站长"><?php echo $group; ?></small></h6>
                         <div><?php echo getPermalinkFromCoid($comments->parent); ?></div>
