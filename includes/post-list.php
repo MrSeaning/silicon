@@ -62,7 +62,7 @@
                                 <?php } ?>
                                 <?php
                                 $commentNum = $this->commentsNum;
-                                if ($commentNum > 1) :
+                                if ($commentNum > 10) :
                                 ?>
                                     <a href="#" class="btn btn-icon btn-secondary btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="热评文章">
                                         <i class="bx bxs-star"></i>

@@ -48,13 +48,6 @@
     <script>
         window.onload = function() {
             window.ViewImage && ViewImage.init('.post .post-content img');
-            let pres = document.querySelectorAll('pre');
-            if (pres) {
-                var lineNumberClassName = 'line-numbers';
-                pres.forEach(function(item, index) {
-                    item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
-                });
-            }
             let table = document.querySelectorAll("table");
             if (table) {
                 table.forEach(function(item, index) {
@@ -67,6 +60,13 @@
                     item.target = '_blank';
                 });
             }
+        }
+        let pres = document.querySelectorAll('pre');
+        if (pres) {
+            var lineNumberClassName = 'line-numbers';
+            pres.forEach(function(item, index) {
+                item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
+            });
         }
     </script>
     <script src="<?php $this->options->themeUrl('assets/js/prism.min.js') ?>"></script>
