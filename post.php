@@ -97,8 +97,8 @@ $this->content = createCatalog($this->content);
                         <div class="card-body">
                             <div class="d-flex flex-sm-row flex-column pt-2">
                                 <?php foreach ($tags as $tag) : ?>
-                                    <?php echo '<a class="btn btn-sm btn-outline-secondary me-2 mb-2" href="' . $tag['permalink'] . '">' . '# ' . $tag['name'] . '</a>'; ?>
-                                    <?php endforeach ?>　
+                                    <?php echo '<a class="btn btn-secondary btn-sm shadow-secondary  me-2 mb-2" href="' . $tag['permalink'] . '">' . '<i class="bx bxs-tag-alt"></i>' . $tag['name'] . '</a>'; ?>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>

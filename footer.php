@@ -34,8 +34,8 @@
 </footer>
 <!-- Back to top button -->
 <a href="#top" class="btn-scroll-top" data-scroll="">
-    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">返回</span>
-    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Up</span>
+    <i class="btn-scroll-top-icon bx bxs-rocket"></i>
 </a>
 <script src="<?php $this->options->themeUrl('assets/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?php $this->options->themeUrl('assets/js/smooth-scroll.min.js') ?>"></script>
