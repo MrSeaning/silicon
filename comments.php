@@ -126,21 +126,20 @@
                             </nav>
                         </section>
                     </div>
+
+
+
+                <?php else : ?>
+
+                    快来抢沙发吧😊😊😊😊
+
+                <?php endif ?>
             </div>
         </div>
-
-
     <?php else : ?>
-        <div class="card border-0 shadow-sm my-4">
-            <div class="card-body">
-                快来抢沙发吧😊😊😊😊
-            </div>
+
+        <div class="card border-0 my-4 shadow-sm">
+            <div class="card-body"><i class='bx bx-no-entry text-danger'></i>本篇文章评论功能已关闭</div>
         </div>
     <?php endif ?>
-<?php else : ?>
-
-    <div class="card border-0 my-4 shadow-sm">
-        <div class="card-body"><i class='bx bx-no-entry text-danger'></i>本篇文章评论功能已关闭</div>
-    </div>
-<?php endif ?>
 </div>

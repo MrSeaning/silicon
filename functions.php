@@ -3,6 +3,7 @@ require_once("core/function.php");
 require_once("core/widget.php");
 require_once("core/shortcode.php");
 require_once("core/theme.php");
+require_once("core/backup.php");
 //后台配置项
 
 function themeConfig($form)
@@ -27,6 +28,8 @@ function themeConfig($form)
 
     $gongan = new Typecho_Widget_Helper_Form_Element_Text("gongan", NULL, NULL, "公安网备案号", '');
     $form->addInput($gongan);
+
+    backThemeOption();
 }
 
 //特色图设置
