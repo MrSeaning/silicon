@@ -43,6 +43,8 @@
     <script src="<?php $this->options->themeUrl('assets/js/swiper-bundle.min.js') ?>"></script>
 <?php endif ?>
 <?php if ($this->is('post') || $this->is('page')) : ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/owo/OwO.min.css'); ?>" type="text/css" media="all">
+    <script src="<?php $this->options->themeUrl('assets/owo/OwO.js') ?>"></script>
     <script src="<?php $this->options->themeUrl('assets/js/ViewImage.min.js') ?>"></script>
     <script src="<?php $this->options->themeUrl('assets/js/short.min.js') ?>"></script>
     <script>
@@ -60,6 +62,15 @@
                     item.target = '_blank';
                 });
             }
+            if (0 < document.querySelectorAll(".OwO").length) var OwO_demo = new OwO({
+                logo: '<svg t="1680512744652" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15595" id="mx_n_1680512744653" width="32" height="32"><path d="M512 959.1c-114.6 0-229.1-43.6-316.3-130.9-174.3-174.4-174.2-458.1 0.2-632.4C298.7 93 445.6 46.6 589 71.5c14.3 2.5 23.9 16.1 21.4 30.4-2.5 14.3-16.1 23.9-30.4 21.4-126.5-22-256.2 19-347 109.7-153.9 153.8-154 404.2-0.2 558.1 153.8 153.9 404.2 154 558.1 0.2s154-404.2 0.2-558.2c-15.4-15.4-32-29.5-49.6-42.1-11.8-8.5-14.5-24.9-6-36.7 8.5-11.8 24.9-14.5 36.7-6 19.8 14.2 38.7 30.3 56.1 47.7 174.3 174.4 174.2 458.1-0.2 632.5-87.1 87-201.6 130.6-316.1 130.6z" p-id="15596"></path><path d="M312.8 410.7m-42.8 0a42.8 42.8 0 1 0 85.6 0 42.8 42.8 0 1 0-85.6 0Z" p-id="15597"></path><path d="M715.6 410.9m-42.5 0a42.5 42.5 0 1 0 85 0 42.5 42.5 0 1 0-85 0Z" p-id="15598"></path><path d="M281.1 553.2v0.4c0 127.5 103.3 231 230.9 231s231-103.3 231-230.9v-0.4l-461.9-0.1z" fill="#FFA786" p-id="15599"></path><path d="M512 810.9s-0.1 0 0 0c-141.9 0-257.3-115.5-257.2-257.3 0-7.9 3.2-26.2 32.7-26.3h82.4c67.1 0 160.4 0 236.9 0.1l133.6 0.1c28.6 0.1 28.9 26 28.9 26.3-0.1 141.7-115.5 257.1-257.3 257.1zM309 579.8c12.9 100.5 99 178.5 202.9 178.5h0.1c103.9 0 190-77.9 203-178.4-82.1 0-324-0.1-406-0.1z" p-id="15600"></path><path d="M673.4 124.4m-26.3 0a26.3 26.3 0 1 0 52.6 0 26.3 26.3 0 1 0-52.6 0Z" fill="#FFA786" p-id="15601"></path></svg>',
+                container: document.getElementsByClassName("OwO")[0],
+                target: document.getElementsByClassName("OwO-textarea")[0],
+                api: "/usr/themes/silicon/assets/owo/OwO.json",
+                position: "down",
+                width: "70vw",
+                maxHeight: "250px"
+            });
         }
         let pres = document.querySelectorAll('pre');
         if (pres) {

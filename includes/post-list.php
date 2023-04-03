@@ -5,7 +5,7 @@
             <?php if ($this->category != "say") :
             ?>
                 <?php if ($this->fields->img) : ?>
-                    <article class="card border-0 shadow-sm card-hover mb-4">
+                    <article class="card border-0 shadow-sm mb-4">
                         <div class="row g-0">
                             <div class="post-list-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover rounded-start" style="background-image: url(<?php echo thumbside($this); ?>); min-height: 15rem;">
                                 <a href="<?php $this->permalink() ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
@@ -53,7 +53,7 @@
                         </div>
                     </article>
                 <? else : ?>
-                    <article class="card shadow mb-4 border-0 card-hover">
+                    <article class="card shadow mb-4 border-0">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-3">
                                 <?php $categories = $this->categories; ?>

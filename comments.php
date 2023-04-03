@@ -29,7 +29,8 @@
                 <span class="reply"> <?php $comments->reply(); ?></span>
             </div>
 
-            <?php $comments->content(); ?>
+            <?php $cos = parseBiaoQing($comments->content);
+            echo $cos; ?>
             <?php if ('waiting' == $comments->status) { ?><span class="text-muted fs-xs">您的评论需管理员审核后才能显示！</span><?php } ?>
         </div>
         <!-- Comment reply -->
@@ -44,97 +45,102 @@
 <div class="comment" id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if ($this->allow('comment')) : ?>
-        <div class="card border-0 my-4 shadow-sm" id="<?php $this->respondId(); ?>">
+        <div class="card border-0 my-4 shadow-sm">
             <div class="card-body">
-                <div class="card-title">
-                    <div class="h5">
-                        <i class="text-primary bx bx-message-square-edit"></i>发布评论
-                    </div>
-                </div>
-                <div class="cancel-comment-reply">
-                    <?php $comments->cancelReply(); ?>
-                </div>
-                <!-- Post comments -->
-                <form id="comment-form" class="needs-validation" method="post" action="<?php $this->commentUrl() ?>" novalidate>
-                    <div class="row">
-                        <?php if ($this->user->hasLogin()) : ?>
-                            <div class="col-md-12">
-                                <div class="form-floating mb-3">
-                                    登录身份:<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" class="btn btn-danger shadow-danger btn-logout bg-gradient" title="Logout">退出</a>
-                                </div>
-                            </div>
-                        <?php else : ?>
-                            <div class="col-md-4">
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" name="author" value="<?php $this->remember('author'); ?>" type="text" id="fl-username" required placeholder="昵称" />
-                                    <label for="fl-username">昵称</label>
-                                    <div class="invalid-tooltip">请输入昵称.</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" name="mail" type="text" value="<?php $this->remember('mail'); ?>" id="fl-email" required placeholder="邮箱" />
-                                    <label for="fl-email">邮箱</label>
-                                    <div class="invalid-tooltip">请输入邮箱.</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" name="url" value="<?php $this->remember('url'); ?>" type="text" id="fl-url" placeholder="网址" />
-                                    <label for="fl-url">网址</label>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                        <div class="col-12 mb-3">
-                            <div class="form-floating">
-                                <textarea class="form-control" name="text" id="fl-cont" style="height: 8rem" placeholder="内容" required><?php $this->remember('text'); ?></textarea>
-                                <label for="fl-cont">来都来了说点啥吧</label>
-                                <div class="invalid-tooltip">别害羞，想说就写下来</div>
-                            </div>
-                        </div>
-                        <div class="col-12 text-end">
-                            <button class="btn btn-dark" type="submit">
-                                发布评论
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <?php if ($comments->have()) : ?>
-            <div class="card border-0 shadow-sm my-4">
-                <div class="card-body">
+                <div id="<?php $this->respondId(); ?>">
                     <div class="card-title">
                         <div class="h5">
-                            <i class="text-primary bx bx-message-square-dots"></i>评论 (<?php $this->commentsNum(); ?>)
+                            <i class="text-primary bx bx-message-square-edit"></i>发布评论
                         </div>
                     </div>
+                    <div class="cancel-comment-reply">
+                        <?php $comments->cancelReply(); ?>
+                    </div>
+                    <!-- Post comments -->
+                    <form id="comment-form" class="needs-validation" method="post" action="<?php $this->commentUrl() ?>" novalidate>
+                        <div class="row">
+                            <?php if ($this->user->hasLogin()) : ?>
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3">
+                                        登录身份:<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" class="btn btn-danger shadow-danger btn-logout bg-gradient" title="Logout">退出</a>
+                                    </div>
+                                </div>
+                            <?php else : ?>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="author" value="<?php $this->remember('author'); ?>" type="text" id="fl-username" required placeholder="昵称" />
+                                        <label for="fl-username">昵称</label>
+                                        <div class="invalid-tooltip">请输入昵称.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="mail" type="text" value="<?php $this->remember('mail'); ?>" id="fl-email" required placeholder="邮箱" />
+                                        <label for="fl-email">邮箱</label>
+                                        <div class="invalid-tooltip">请输入邮箱.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="url" value="<?php $this->remember('url'); ?>" type="text" id="fl-url" placeholder="网址" />
+                                        <label for="fl-url">网址</label>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <div class="col-12 mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control OwO-textarea" name="text" id="fl-cont" style="height: 8rem" placeholder="内容" required><?php $this->remember('text'); ?></textarea>
+                                    <label for="fl-cont">来都来了说点啥吧</label>
+                                    <div class="invalid-tooltip">别害羞，想说就写下来</div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="OwO"></div>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button class="btn btn-dark" type="submit">
+                                    发布评论
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <?php if ($comments->have()) : ?>
+
+                    <div class="h5">
+                        <i class="text-primary bx bx-message-square-dots"></i>评论 (<?php $this->commentsNum(); ?>)
+                    </div>
+
                     <hr class="my-2" />
                     <!-- Comment -->
 
                     <?php $comments->listComments(); ?>
 
-                </div>
-                <div class="card-footer">
-                    <section class="my-5">
-                        <nav>
-                            <?php $comments->pageNav('<i class="bx bx-chevron-left mx-n1"></i>', '<i class="bx bx-chevron-right mx-n1"></i>', 5, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination pagination-lg justify-content-center', 'itemTag' => 'li', 'itemClass' => 'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => '', 'nextClass' => '')); ?>
-                        </nav>
-                    </section>
-                </div>
-            </div>
 
-        <?php else : ?>
-            <div class="card border-0 shadow-sm my-4">
-                <div class="card-body">
-                    快来抢沙发吧😊😊😊😊
-                </div>
+                    <div class="card-footer">
+                        <section class="my-5">
+                            <nav>
+                                <?php $comments->pageNav('<i class="bx bx-chevron-left mx-n1"></i>', '<i class="bx bx-chevron-right mx-n1"></i>', 5, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination pagination-lg justify-content-center', 'itemTag' => 'li', 'itemClass' => 'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => '', 'nextClass' => '')); ?>
+                            </nav>
+                        </section>
+                    </div>
             </div>
-        <?php endif ?>
+        </div>
+
+
     <?php else : ?>
-
-        <div class="card border-0 my-4 shadow-sm">
-            <div class="card-body"><i class='bx bx-no-entry text-danger'></i>本篇文章评论功能已关闭</div>
+        <div class="card border-0 shadow-sm my-4">
+            <div class="card-body">
+                快来抢沙发吧😊😊😊😊
+            </div>
         </div>
     <?php endif ?>
+<?php else : ?>
+
+    <div class="card border-0 my-4 shadow-sm">
+        <div class="card-body"><i class='bx bx-no-entry text-danger'></i>本篇文章评论功能已关闭</div>
+    </div>
+<?php endif ?>
 </div>

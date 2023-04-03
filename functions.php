@@ -2,7 +2,7 @@
 require_once("core/function.php");
 require_once("core/widget.php");
 require_once("core/shortcode.php");
-
+require_once("core/theme.php");
 //后台配置项
 
 function themeConfig($form)
