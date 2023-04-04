@@ -5,7 +5,12 @@ require_once("core/shortcode.php");
 require_once("core/theme.php");
 require_once("core/backup.php");
 //后台配置项
-
+function themeInit($archive)
+{
+    if ($archive->is('category', 'say')) {
+        $archive->parameter->pageSize = 10; // 自定义条数
+    }
+}
 function themeConfig($form)
 {
     $tips = new Typecho_Widget_Helper_Form_Element_Text('tips', NULL, "我是一个默认的公告", _t('公告'), _t('公告内容，支持html'));
@@ -20,6 +25,9 @@ function themeConfig($form)
     $pin = new Typecho_Widget_Helper_Form_Element_Text('pin', NULL, NULL, _t('置顶文章id'), _t('文章ID，以逗号,隔开,三或者四个最好'));
     $form->addInput($pin);
 
+    $cidId = new Typecho_Widget_Helper_Form_Element_Text('cidId', NULL, NULL, _t('首页列表不显示的分类ID'), _t('在这里填入欲隐藏的分类ID，使用半角逗号“,”填入多个，如：1,2，留空不显示'));
+    $form->addInput($cidId);
+
     $postType = new Typecho_Widget_Helper_Form_Element_Select("postType", array('grid' => '卡片模式', 'list' => '列表模式'), 1, _t('首页文章模式'), _t('首页文章模式:卡片，网格'));
     $form->addInput($postType);
 
@@ -28,6 +36,7 @@ function themeConfig($form)
 
     $gongan = new Typecho_Widget_Helper_Form_Element_Text("gongan", NULL, NULL, "公安网备案号", '');
     $form->addInput($gongan);
+
 
     backThemeOption();
 }

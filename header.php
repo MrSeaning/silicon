@@ -55,14 +55,6 @@
 
         <body>
         <? endif ?>
-        <!-- Page loading spinner -->
-        <div class="page-loading">
-            <div class="page-loading-inner">
-                <div class="spinner-grow text-primary" style="width:5rem;height:5rem" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        </div>
         <!-- Menu + Theme mode switch + Button -->
         <header class="d-flex flex-column bg-light position-relative navbar-sticky shadow-sm" data-scroll-header>
             <!-- Full screen modal -->
@@ -115,6 +107,9 @@
                         <ul class="navbar-nav offcanvas-body me-auto">
                             <li class="nav-item">
                                 <a href="/" class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/say" class="nav-link">动态</a>
                             </li>
                             <!--导航-->
                             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>

@@ -97,7 +97,7 @@ $this->need('header.php');
                         <path d="M587.144495 957.903856a26.256511 26.256511 0 1 0 26.256511-26.256511 26.256511 26.256511 0 0 0-26.256511 26.256511z" fill="#88C8FC" p-id="11920"></path>
                         <path d="M104.571318 907.200476A24.444904 24.444904 0 1 0 129.016222 882.755572a24.444904 24.444904 0 0 0-24.444904 24.444904z" fill="#88C8FC" p-id="11921"></path>
                     </svg></div>
-                <h2 class="h1 my-4">当前搜索词暂无文章</h2>
+                <h2 class="h1 my-4">当前关键词下暂无文章</h2>
                 <p class="lead pb-3 mb-3">换个搜索词试试吧</p>
                 <a href="/" class="btn btn-lg btn-primary shadow-primary w-sm-auto w-100">
                     <i class="bx bx-home-alt me-2 ms-n1 lead"></i>
