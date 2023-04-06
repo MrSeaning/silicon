@@ -88,11 +88,13 @@ h2.title::before {
 .post .post-content ul li {
   list-style-type: circle;
 }
+#archives h2,
 .post .post-content h2 {
   font-weight: 700;
   display: table;
   box-shadow: inset 0 -1rem 0 rgb(100 102 233 / 30%);
 }
+#archives h2,
 .post .post-content h2,
 .post .post-content h3 {
   margin: 1.5rem 0;
@@ -361,4 +363,9 @@ a#cancel-comment-reply-link {
 .pagination-lg a {
   border-radius: 0.5rem;
   font-size: 1rem;
+}
+
+/*归档*/
+#archives ul {
+  list-style-type: none;
 }

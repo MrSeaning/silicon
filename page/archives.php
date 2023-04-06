@@ -23,7 +23,7 @@ $this->need('header.php'); ?>
     </section>
     <section class="container pb-2 py-mg-4">
         <!-- Content -->
-        <div class="card border-0 shadow-sm post-content">
+        <div class="card border-0 shadow-sm">
             <div class="card-body">
                 <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
                 $year = 0;
@@ -41,13 +41,13 @@ $this->need('header.php'); ?>
                         if ($year != $year_tmp && $year > 0) $output .= '</ul>';
                         if ($year != $year_tmp) {
                             $year = $year_tmp;
-                            $output .= '<h2>' . $year . ' 年</h2><ul>'; //输出年份
+                            $output .= '<h2>' . $year . '年</h2><hr class="mb-3" /><ul>'; //输出年份
                         }
                         if ($mon != $mon_tmp) {
                             $mon = $mon_tmp;
-                            $output .= '<li><span>' . $mon . ' 月</span><ul>'; //输出月份
+                            $output .= '<li><h3 class="title h4">' . $mon . '月</h3><ul class="list-group list-group-flush">'; //输出月份
                         }
-                        $output .= '<li>' . date('d日: ', $archives->created) . '<a href="' . $archives->permalink . '">' . $archives->title . '</a> <em>(' . $archives->commentsNum . ')</em></li>'; //输出文章日期和标题
+                        $output .= '<li class="list-group-item"><a class="fs-6 text-decoration-none" href="' . $archives->permalink . '"><span>' . $mon . date('-d', $archives->created) . '</span> • ' . $archives->title . '</a></li>'; //输出文章日期和标题
                     }
                 endwhile;
                 $output .= '</ul></li></ul></div>';
