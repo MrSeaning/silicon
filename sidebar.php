@@ -3,8 +3,8 @@
         <img src="<?php $this->options->themeUrl('assets/img/aside_author.webp')  ?>" class="card-img-top rounded-top" alt="Card image">
         <div class="card-body">
             <img src="<?php $this->options->themeUrl('assets/img/tx.jpg')  ?>" class="widget-author-img img-thumbnail rounded-circle" width="100" alt="">
-            <h5 class="fw-medium fs-lg mb-3">Mr.Seaning</h5>
-            <p class="fs-sm py-1 mb-3 border border-primary rounded">无实而享大名者必有奇祸</p>
+            <h5 class="fw-medium fs-lg my-3">Mr.Seaning</h5>
+            <p class="fs-sm py-1 mb-3 border border-primary text-primary rounded">无实而享大名者必有奇祸</p>
 
             <!-- <div class="d-flex justify-content-center">
                 <a href="https://github.com/mrseaning" class="btn btn-icon btn-outline-secondary btn-github btn-sm me-2">

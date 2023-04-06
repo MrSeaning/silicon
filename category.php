@@ -2,11 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-
-
-
 <main class="page-wrapper mb-5">
-
     <?php if ($this->have()) : ?>
         <section class="container mt-2 mb-lg-5 pt-lg-2 pb-5">
             <nav aria-label="breadcrumb">

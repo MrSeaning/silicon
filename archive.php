@@ -1,10 +1,8 @@
 <?php
+//搜索、Tag页面视图
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-
-
-
 <main class="page-wrapper mb-5">
 
     <?php if ($this->have()) : ?>

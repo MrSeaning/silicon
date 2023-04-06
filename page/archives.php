@@ -32,21 +32,23 @@ $this->need('header.php'); ?>
                 $j = 0;
                 $output = '<div id="archives">';
                 while ($archives->next()) :
-                    $year_tmp = date('Y', $archives->created);
-                    $mon_tmp = date('m', $archives->created);
-                    $y = $year;
-                    $m = $mon;
-                    if ($mon != $mon_tmp && $mon > 0) $output .= '</ul></li>';
-                    if ($year != $year_tmp && $year > 0) $output .= '</ul>';
-                    if ($year != $year_tmp) {
-                        $year = $year_tmp;
-                        $output .= '<h2>' . $year . ' 年</h2><ul>'; //输出年份
+                    if ($archives->category != "say") {
+                        $year_tmp = date('Y', $archives->created);
+                        $mon_tmp = date('m', $archives->created);
+                        $y = $year;
+                        $m = $mon;
+                        if ($mon != $mon_tmp && $mon > 0) $output .= '</ul></li>';
+                        if ($year != $year_tmp && $year > 0) $output .= '</ul>';
+                        if ($year != $year_tmp) {
+                            $year = $year_tmp;
+                            $output .= '<h2>' . $year . ' 年</h2><ul>'; //输出年份
+                        }
+                        if ($mon != $mon_tmp) {
+                            $mon = $mon_tmp;
+                            $output .= '<li><span>' . $mon . ' 月</span><ul>'; //输出月份
+                        }
+                        $output .= '<li>' . date('d日: ', $archives->created) . '<a href="' . $archives->permalink . '">' . $archives->title . '</a> <em>(' . $archives->commentsNum . ')</em></li>'; //输出文章日期和标题
                     }
-                    if ($mon != $mon_tmp) {
-                        $mon = $mon_tmp;
-                        $output .= '<li><span>' . $mon . ' 月</span><ul>'; //输出月份
-                    }
-                    $output .= '<li>' . date('d日: ', $archives->created) . '<a href="' . $archives->permalink . '">' . $archives->title . '</a> <em>(' . $archives->commentsNum . ')</em></li>'; //输出文章日期和标题
                 endwhile;
                 $output .= '</ul></li></ul></div>';
                 echo $output;
