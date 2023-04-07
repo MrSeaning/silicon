@@ -369,3 +369,12 @@ a#cancel-comment-reply-link {
 #archives ul {
   list-style-type: none;
 }
+#archives h3 {
+  margin: 0;
+}
+#archives a {
+  color: #333;
+}
+#archives a:hover {
+  color: var(--bs-primary);
+}

@@ -9,23 +9,36 @@
             $this->length = 0;
             $order = ''; //清空文章队列
             $db = Typecho_Db::get();
+            $countSelect = $this->select("Count(*) as num")->where(
+                'table.contents.type = ? and table.contents.status = ? and table.contents.created < ?',
+                'post',
+                'publish',
+                time()
+            )->group('table.contents.cid');
             $restPostSelect = $this->select('table.contents.cid', 'table.contents.title', 'table.contents.slug', 'table.contents.created', 'table.contents.authorId', 'table.contents.modified', 'table.contents.type', 'table.contents.status', 'table.contents.text', 'table.contents.commentsNum', 'table.contents.order', 'table.contents.template', 'table.contents.password', 'table.contents.allowComment', 'table.contents.allowPing', 'table.contents.allowFeed', 'table.contents.parent')->where(
                 'table.contents.type = ? and table.contents.status = ? and table.contents.created < ?',
                 'post',
                 'publish',
                 time()
             )->group('table.contents.cid');
+            $countSelect = $countSelect->join('table.relationships', 'table.relationships.cid = table.contents.cid', 'right')->join('table.metas', 'table.relationships.mid = table.metas.mid', 'right')->where('table.metas.type=?', 'category');
             $restPostSelect = $restPostSelect->join('table.relationships', 'table.relationships.cid = table.contents.cid', 'right')->join('table.metas', 'table.relationships.mid = table.metas.mid', 'right')->where('table.metas.type=?', 'category');
+
             $cidId = explode(',', $this->options->cidId); //分割文本
             foreach ($cidId as $i => $cid) {
+                $countSelect->where('table.relationships.mid != ' . intval($cid))->group('cid');
                 $restPostSelect->where('table.relationships.mid != ' . intval($cid))->group('cid');
             }
+            $countSelect = $countSelect->order('table.contents.created', Typecho_Db::SORT_DESC);
             $endSelect = $restPostSelect->order('table.contents.created', Typecho_Db::SORT_DESC);
-            $rest_posts = $db->fetchAll($restPostSelect->order('table.contents.created', Typecho_Db::SORT_DESC)->page($this->_currentPage, $this->parameter->pageSize));
+            $count = $db->fetchAll($countSelect);
+            $rest_posts = $db->fetchAll($endSelect->page($this->_currentPage, $this->parameter->pageSize));
             foreach ($rest_posts as $rest_post) {
                 $this->push($rest_post);
             }
-            $this->setTotal($this->getTotal() - count($cidId)); //重新设置文章数
+            //$this->setTotal($this->getTotal() - count($cidId)); //重新设置文章数
+            $this->setTotal(count($count));
+            //echo $count;
         }
         ?>
         <?php while ($this->next()) : ?>
