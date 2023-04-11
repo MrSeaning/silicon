@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--bs-primary);
+}
 @font-face {
   font-family: hm;
   font-style: normal;
@@ -85,8 +98,8 @@ h2.title::before {
 .post .post-content img {
   border-radius: 5px;
 }
-.post .post-content ul li {
-  list-style-type: circle;
+.post .post-content ul li::marker {
+  color: var(--bs-primary);
 }
 #archives h2,
 .post .post-content h2 {
@@ -114,6 +127,8 @@ h2.title::before {
   background: #fc625d;
   box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
 }
+
+/*评论*/
 .comment i.bx,
 .widget-toc i.bx {
   font-size: 1.5rem;

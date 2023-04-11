@@ -84,7 +84,14 @@
             <div class="navbar navbar-expand-lg navbar-light" data-scroll-header>
                 <div class="container">
                     <a href="/" class="navbar-brand">
-                        <img src="<?php $this->options->themeUrl('assets/img/tx.jpg'); ?>" class="rounded-circle" width="47" alt="<?php $this->options->title() ?>" />
+                        <?php
+                        if ($this->options->logo) :
+                        ?>
+                            <img src="<?php $this->options->logo; ?>" class="rounded-circle" width="47" alt="<?php $this->options->title() ?>" />
+                        <?php endif ?>
+                        <!-- <img src="<?php //$this->options->themeUrl('assets/img/tx.jpg'); 
+                                        ?>" class="rounded-circle" width="47" alt="<?php //$this->options->title() 
+                                                                                    ?>" /> -->
                         <?php $this->options->title() ?>
                     </a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarCollapse" aria-expanded="false">

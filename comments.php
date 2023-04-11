@@ -122,7 +122,7 @@
                     <div class="card-footer">
                         <section class="my-5">
                             <nav>
-                                <?php $comments->pageNav('<i class="bx bx-chevron-left mx-n1"></i>', '<i class="bx bx-chevron-right mx-n1"></i>', 5, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination pagination-lg justify-content-center', 'itemTag' => 'li', 'itemClass' => 'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => '', 'nextClass' => '')); ?>
+                                <?php $comments->pageNav('<i class="bx bx-chevron-left mx-n1"></i>', '<i class="bx bx-chevron-right mx-n1"></i>', 5, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination pagination-sm justify-content-center', 'itemTag' => 'li', 'itemClass' => 'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => '', 'nextClass' => '')); ?>
                             </nav>
                         </section>
                     </div>

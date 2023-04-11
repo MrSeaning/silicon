@@ -13,6 +13,9 @@ function themeInit($archive)
 }
 function themeConfig($form)
 {
+    $logo = new Typecho_Widget_Helper_Form_Element_Text('logo', NULL, "网站Logo", _t('网站Logo'), _t('网站Logo'));
+    $form->addInput($logo);
+
     $tips = new Typecho_Widget_Helper_Form_Element_Text('tips', NULL, "我是一个默认的公告", _t('公告'), _t('公告内容，支持html'));
     $form->addInput($tips);
 
@@ -36,7 +39,6 @@ function themeConfig($form)
 
     $gongan = new Typecho_Widget_Helper_Form_Element_Text("gongan", NULL, NULL, "公安网备案号", '');
     $form->addInput($gongan);
-
 
     backThemeOption();
 }

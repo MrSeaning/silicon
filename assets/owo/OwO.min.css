@@ -99,7 +99,7 @@ img.biaoqing.quyin {
   display: none;
   padding: 10px;
   margin: 0;
-  overflow: scroll;
+  overflow-y: scroll;
   font-size: 0;
 }
 
