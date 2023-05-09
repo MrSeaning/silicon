@@ -5,14 +5,9 @@ require_once("core/shortcode.php");
 require_once("core/theme.php");
 require_once("core/backup.php");
 //后台配置项
-function themeInit($archive)
-{
-    if ($archive->is('category', 'say')) {
-        $archive->parameter->pageSize = 10; // 自定义条数
-    }
-}
 function themeConfig($form)
 {
+
     $logo = new Typecho_Widget_Helper_Form_Element_Text('logo', NULL, "网站Logo", _t('网站Logo'), _t('网站Logo'));
     $form->addInput($logo);
 
